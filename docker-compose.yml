@@ -1,0 +1,13 @@
+version: '3'
+services:
+  app:
+    image: wolverinesportsanalytics/wsa-wnba
+    depends_on:
+      - "db"
+  db:
+    image: wolverinesportsanalytics/wsa-mysql
+    environment:
+            MYSQL_ROOT_PASSWORD: secret
+    container_name: wsa-mysql-server
+    ports:
+      - "3300:3306"
